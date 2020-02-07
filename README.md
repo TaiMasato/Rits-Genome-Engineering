@@ -90,8 +90,6 @@ otiai10さんもアドバイザーとして2017.7.16現在は参加されてま�
 >　　　[0 -> *A_thaliana*    ]  
 >　　　[1 -> *M_polymorpha*    ]  
 >　　　[2 -> *N_Benthamiana*    ]  
->　　　[3 -> *S_lycopersicum*    ]  
->　　　[4 -> *P_trichocarpa*    ]  
 > ＜input_file1＞  query input files are fasta format <.fasta/.fa>  
 > ＜input_file2＞  query input files are gff3 format <.gff/.gff3>  
 > ＜input_file3＞  query input files are gene id list file <.txt>  
@@ -136,32 +134,3 @@ otiai10さんもアドバイザーとして2017.7.16現在は参加されてま�
 
 
 
-
-
-
-
-
-
-
-
-0. ：SAM/BAMまたはBEDファイルを入力として用いることでこれらのファイルをGFF形式に変換する。SAM/BAMファイルをbedtoolsを利用してBED形式に変換する。BEDファイルは組み込んだbed_to_gff.pyによってGFF形式に変換される。
-1. : CDS(などのfeatureの)配列をとってきて，gRNAを設計し，bowtieに投げてその結果を得る
-2.：PAM_check_dict.py：
-BowtieResultFixedFile.txtに記されたSpacer候補配列の3'側にPAMがあった場合、リストに書き込み出力する。各行の構成はBowtieResultFixedFile.txtと同様のもの。行数は大きく減る
-3. : Seedchecker ：bowtieの出力結果をリスト化するとともにMissmatch情報を要約して出力
-(出力は，bowtieの結果ファイルと行数は同じで表示形式が異なるだけ)
-4. : OfftargetCount.py ：gRNAのofftarget数をカウントして別ファイルとして出力
-(出力OTList.txtはgRNAの数ではなくbowtieの出力の各行とOTの数(これはgRNAの数)が1:1対応する)
-5. ：Add_OT_num　： OfftargetCountで得たgRNAをbowtieの結果ファイルのミスマッチ情報を改変したファイル(BowtieResult_with_MMposition_List)を加える．
-(出力は，bowtieの結果ファイルと行数が同じで，OTの数が各行に付与された状態)
-6. ：Join_bowtiesummary_2query.py ：
-(出力は，bowtieの結果ファイルと行数が同じで，OT数に加えてannotationも付与された状態）
-7. ：Make_UniquegRNAlist_withAnnotation.py：
-join_Bowtiesummary_2query.pyで出力されたファイルの10 ~ 13番目の要素を9番目の要素に結合する。結合した４つの要素は"その数字が示す内容 = 数字"の形で順に格納される。(ただ要素を結合しただけなので行数はJoined_AllgRNAquery_with_BowtieAnnotation.txtと同じ)
-8.：Restrict_gRNA.py
-Spacer配列内にpoly_Tを含むものおよびGC含量が極端なものを削除する。
-(出力はpoly_Tを含まず且つGC含量が25 ~ 75%に収まっているgRNAをリスト化した状態なのでUniquegRNAlist_withAnnotation.txtよりも行数は減少する可能性がある。)
-9. ：Pick_Up_gRNA_at_Central_CDS.py
-各遺伝子において、CDS領域の中央に最も近いgRNAを10ずつ取り出す。設計できたgRNAが10本以下の場合はあるだけ取り出す。なので各行の要素数は同じであるが、行数自体はselected_GC_gRNAs.txtよりも減少。
-10.：各遺伝子のgRNAのうち、最もofftarget数が少ないgRNAを3本ずつ取り出す。
-(各行の要素数はPickUp_gRNAs_of_Center.txtと同じ,行数は減少する。)
