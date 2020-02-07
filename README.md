@@ -6,6 +6,8 @@ For-programming-at-Rits-Sugano-Group
 深尾研Sugano-Group用のプログラミングを共有するためのGithubリポジトリです。
 otiai10さんもアドバイザーとして2017.7.16現在は参加されてます。
 
+本ツール開発に関わった全ての方々に感謝いたします。
+
 # 構成
 
 ```
