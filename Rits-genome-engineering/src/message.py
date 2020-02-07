@@ -1,0 +1,32 @@
+#エラーを吐いた時の仕様書。help的なもの。
+def messagefunc():
+    print ()
+    print ('No index, query, or output file specified.')
+    print ('Usage:')
+    print ('・For Framshift')
+    print ('    $ python3 integrate_src_control.py <input1> <input2> <input_file1> <input_file2> <input_file3> <input3> <input4> <input5> <input6> <input7> <input8>')
+    print ()
+    print ('・For Large Deletion')
+    print ('    $ python3 integrate_src_control.py <input1> <input2> <input_file1> <input_file2> <input_file3> <input3> <input4> <input5> <input8>')
+    print ()
+    print ()
+    print ('<input1>  gRNA designing position: gRNAの設計位置を指定。frameshit位置に設計→ [fs], large deletion位置に設計→ [ld]')
+    print ('<input2>  input species number')
+    print ('    [0 -> A_thaliana      ]')
+    print ('    [1 -> M_polymorpha    ]')
+    print ('    [2 -> N_Benthamiana   ]')
+    print ('    [3 -> S_lycopersicum  ]')
+    print ('    [4 -> P_trichocarpa   ]')
+
+    print ('<input_file1>  query input files are fasta format <.fasta/.fa>')
+    print ('<input_file2>  query input files are gff3 format <.gff/.gff3>')
+    print ('<input_file3>  query input files are gene id list file <.txt>')
+    print ('<input3>  PAM: 任意のPAMを入力 ex) NGG')
+    print ('<input4>  GC含量を考慮するか否か→ [y/n]。yの場合、GC含量は25~75%保持しているgRNA以外を除外。')
+    print ('<input5>  poly_Tを考慮するか否か→ [y/n]。yの場合、Poly_Tは連続するTが4つ以上あるものを除外する。')
+    print ('<input6>  真ん中からの取り出しを有効にするか否か→ [y/n]。')
+    print ('<input7>  splicing variantを考慮するか否か→ [y/n]。')
+    print ('<input8>  Number of gRNAs per gene to extract→ [<int>/n]。最終的に各設計領域から取り出すgRNAの数を指定する。nの場合、各領域に設計されたgRNAの最大数(直前の操作に依存)を取り出す。')
+
+if __name__ == '__main__':
+    messagefunc()
