@@ -24,7 +24,7 @@ otiai10さんもアドバイザーとして2017.7.16現在は参加されてま�
 # 環境構築 for Mac (本ツールインストール前に)
 ## 必要ツールおよびライブラリ
 >python3   
->numpy
+>numpy 
 >bowtie
 
 ## インストール
@@ -77,11 +77,11 @@ otiai10さんもアドバイザーとして2017.7.16現在は参加されてま�
 ## コマンド
 >Framshift: 
 >```
->$ python3 integrate_src_control.py <input1> <input2> <input_file1> <input_file2> <input_file3> <input3> <input4> <input5> <input6> <input7> <input8>
+>$ python3 main_script.py <input1> <input2> <input_file1> <input_file2> <input_file3> <input3> <input4> <input5> <input6> <input7> <input8>
 >```
 >Large Deletion: 
 >```
->$ python3 integrate_src_control.py <input1> <input2> <input_file1> <input_file2> <input_file3> <input3> <input4> <input5> <input8>
+>$ python3 main_script.py <input1> <input2> <input_file1> <input_file2> <input_file3> <input3> <input4> <input5> <input8>
 >```
 
 ## 各種input説明
