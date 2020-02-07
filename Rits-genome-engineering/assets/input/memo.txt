@@ -1,0 +1,4 @@
+Please input file.
+Genome sequence file (Fasta)
+Genome annotation file (GFF3)
+Gene name list file (txt)
