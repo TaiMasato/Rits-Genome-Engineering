@@ -3,8 +3,7 @@ For-programming-at-Rits-Sugano-Group
 
 本ツールはCRISPR/Casシステムで使用するgRNAを遺伝子の中央および両端に設計する。
 
-深尾研すがのGroup用のプログラミングを共有するためのGithubリポジトリです。
-外部には非公開です。
+深尾研Sugano-Group用のプログラミングを共有するためのGithubリポジトリです。
 otiai10さんもアドバイザーとして2017.7.16現在は参加されてます。
 
 # 構成
